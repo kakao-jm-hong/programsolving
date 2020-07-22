@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class B3665 {
+	static int Tc;
+	static int N, M;
+	static int seq[];
+	static ArrayList<> Vex[];
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder sb;
+		Tc = Integer.parseInt(br.readLine());
+
+		while (Tc-- != 0) {
+			N = Integer.parseInt(br.readLine());
+			seq = new int[N];
+			st = new StringTokenizer(br.readLine());
+			for (int n = 0; n < N; n++)
+				seq[n] = Integer.parseInt(st.nextToken());
+
+		}
+	}
+}

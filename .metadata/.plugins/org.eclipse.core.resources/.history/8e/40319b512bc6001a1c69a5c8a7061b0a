@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class B6543 {
+
+	static int V, E;
+	static ArrayList<Integer> ver[];
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+
+		while (true) {
+			st = new StringTokenizer(br.readLine());
+			if ((V = Integer.parseInt(st.nextToken())) == 0) break;
+			E = Integer.parseInt(st.nextToken());
+		}
+	}
+}
