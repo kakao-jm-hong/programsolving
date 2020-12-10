@@ -1,0 +1,121 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.StringTokenizer;
+
+public class B3665 {
+	static int Tc;
+	static int N, M;
+	static int seq[];
+	static ArrayList<Integer> Vex[];
+	static int parrent[];
+	static int child[];
+	static int rank[];
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		Tc = Integer.parseInt(br.readLine());
+
+		while (Tc-- != 0) {
+			N = Integer.parseInt(br.readLine());
+			seq = new int[N];
+			st = new StringTokenizer(br.readLine());
+			for (int n = 0; n < N; n++)
+				seq[n] = Integer.parseInt(st.nextToken());
+
+			Vex = new ArrayList[N + 1];
+			for (int n = 1; n <= N; n++)
+				Vex[n] = new ArrayList<>();
+
+			for (int i = 0; i < N - 1; i++) {
+				for (int j = i + 1; j < N; j++) {
+					Vex[seq[j]].add(seq[i]);
+				}
+			}
+
+			M = Integer.parseInt(br.readLine());
+			for (int m = 0; m < M; m++) {
+				st = new StringTokenizer(br.readLine());
+				// a <- b
+				int a = Integer.parseInt(st.nextToken());
+				int b = Integer.parseInt(st.nextToken());
+
+				// b <- a 엿던것을 a < - b로 바꾼다.
+
+				// b <- a edge 제거
+				boolean isChange = false;
+				for (Iterator<Integer> it = Vex[a].iterator(); it.hasNext();) {
+					int cur = it.next();
+					if (cur == b) {
+						it.remove();
+						isChange = true;
+						break;
+					}
+				}
+
+				if (isChange) {
+					// a<-b 엣지 추가
+					Vex[b].add(a);
+				} else {
+					for (Iterator<Integer> it = Vex[b].iterator(); it.hasNext();) {
+						int cur = it.next();
+						if (cur == a) {
+							it.remove();
+							break;
+						}
+					}
+					Vex[a].add(b);
+				}
+			}
+
+			// 연결이 끝나면 위상을 확인하는데 parrent child 수라 확인한다.
+			parrent = new int[N + 1];
+			child = new int[N + 1];
+			rank = new int[N + 1];
+
+			// parrent + child 의 합은 항상 N-1 이어야한다.
+
+			for (int n = 1; n <= N; n++) {
+				for (int next : Vex[n]) {
+					// next <- n 노드이다.
+					parrent[n]++;
+					child[next]++;
+				}
+			}
+
+			boolean isPossible = false;
+
+			// rank를 구한다.
+			for (int n = 1; n <= N; n++) {
+				if ((parrent[n] + child[n]) != N - 1) {
+					isPossible = true;
+					break;
+				}
+				rank[parrent[n] + 1] = n;
+			}
+
+			for (int n = 1; n <= N; n++) {
+				System.out.print(rank[n] + " ");
+				if (rank[n] == 0) {
+					isPossible = true;
+					break;
+				}
+			}
+
+			if (isPossible) {
+				sb.append("IMPOSSIBLE\n");
+			} else {
+				for (int n = 1; n <= N; n++) {
+					sb.append(rank[n]).append(' ');
+				}
+				sb.append('\n');
+			}
+
+		}
+		System.out.println(sb.toString());
+	}
+}
