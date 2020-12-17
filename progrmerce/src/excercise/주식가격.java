@@ -33,14 +33,14 @@ public class 주식가격 {
 			while (!stack.isEmpty()) {
 				Pair cur = stack.peek();
 				if (cur.price < prices[t]) {
-
+					stack.add(new Pair(t, prices[t]));
 					break;
 				} else {
 					stack.pop();
 					answer[cur.time] = t - cur.time;
 				}
 			}
-			stack.add(new Pair(t, prices[t]));
+			
 		}
 
 		while (!stack.isEmpty()) {

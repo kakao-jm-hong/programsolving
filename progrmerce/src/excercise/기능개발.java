@@ -8,7 +8,7 @@ public class 기능개발 {
 		int completeTime[] = new int[progresses.length];
 		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < progresses.length; i++) {
-			completeTime[i] = (100 - progresses[i] + speeds[i]) / speeds[i];
+			completeTime[i] = (100 - progresses[i] + speeds[i] - 1) / speeds[i];
 		}
 
 		int pivot = 0;
