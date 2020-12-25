@@ -1,5 +1,7 @@
 # Program Solving
-
+```
+심시할때 마다 알고리즘을 공부하자!
+```
 ## [LIS nlon 기법](https://redbinalgorithm.tistory.com/57?category=880023)
 ## [비트 연산을 이용해 2^n 이 맞는지 판별하기](https://redbinalgorithm.tistory.com/61?category=880023)
 ## [Uppered Bounded](https://redbinalgorithm.tistory.com/62?category=880023)
