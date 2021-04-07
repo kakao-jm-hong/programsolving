@@ -51,7 +51,8 @@ public class boj18500 {
 					j--;
 				}
 			}
-			Map[target][j] = 0;
+			if(j>=0&&j<C)
+				Map[target][j] = 0;
 			process();
 			down();
 		}
