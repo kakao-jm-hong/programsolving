@@ -9,7 +9,6 @@
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.AssertionError"/>
     <fullyQualifiedTypeName name="naver.q4.Pair"/>
     <fullyQualifiedTypeName name="javax.jws.soap.SOAPBinding"/>
@@ -40,7 +39,10 @@
     <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.utils.FastStringBuffer"/>
     <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+=======
+>>>>>>> 54d8badf1baf3670d9e860c7d66b3bb38fe4969d
     <fullyQualifiedTypeName name="boj.B1800.Edge"/>
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
@@ -48,6 +50,7 @@
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="boj.boj14466.Edge"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="jdk.internal.org.jline.utils.InputStreamReader"/>
@@ -55,4 +58,16 @@
     <fullyQualifiedTypeName name="boj.boj4256"/>
     <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+=======
+    <fullyQualifiedTypeName name="boj.boj4256"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="boj.B18428.Pair"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="jdk.internal.org.jline.utils.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+>>>>>>> 54d8badf1baf3670d9e860c7d66b3bb38fe4969d
 </qualifiedTypeNameHistroy>
