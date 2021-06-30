@@ -4,8 +4,8 @@
 
 class Queue {
     constructor() {
-        this._q_size = 10000;
-        this._arr = Array(10000);
+        this._q_size = 250000;
+        this._arr = Array(250000);
         this.front = 0;
         this.rear = 0;
     }
@@ -25,7 +25,7 @@ class Queue {
     }
 
     size() {
-        return this._arr.length;
+        return (this._q_size + this.rear - this.front) % this._q_size;
     }
 }
 
@@ -34,7 +34,8 @@ class Queue {
 
 function solution(n, edges) {
     // init Edge 작업
-    var Edge = Array(n + 1).fill().map(_ => []);
+    // var Edge = Array(n + 1).fill().map(_ => []);
+    var Edge = Array.from({length : n + 1},() => [])
 
     const size = edges.length;
     
@@ -49,7 +50,11 @@ function solution(n, edges) {
     // 정점 후보 노드
     let [index, count, distance] = FallNode(1, Edge, n);
     
-    // node[0].index , node[0].distance 
+    [index, count, distance] = FallNode(index, Edge, n);
+    
+    if(count >= 2)
+        return distance;
+    
     [index, count, distance] = FallNode(index, Edge, n);
     
     return count === 1 ? distance - 1 : distance;
@@ -58,7 +63,7 @@ function solution(n, edges) {
 
 function FallNode(node, Edge, n) {
     var q = new Queue();
-    // var visit = Array.from({length : n+1},()=> false);
+
     var visit = Array(n+1).fill(false);
     q.push(node);
     visit[node] = true;
@@ -66,12 +71,11 @@ function FallNode(node, Edge, n) {
     let distance = -1;
     let count = 0;
     let index;
-
+    
     while(!q.isEmpty()) {
         ++distance;
         count = 0;
         let size = q.size();
-        
         for(let i=0;i<size;i++) {
             var check = true;
             let cur = q.pop();
