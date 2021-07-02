@@ -68,10 +68,6 @@ function solution(words, queries) {
             answer.push(find(query.split("").reverse().join(""),rearRoot[len]))
         }
     }
-
-    
-    
-    
     return answer;
 }
 
