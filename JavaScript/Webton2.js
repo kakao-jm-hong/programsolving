@@ -10,15 +10,15 @@ function solution(money, cost) {
 
     while(true) {
         if(sum>money){
-            sum -= money[front++];
+            sum -= cost[front++];
             cnt--;
         }else if(rear == N) break;
         else {
             sum += cost[rear++];
             cnt++;
         }
-        
-        answer = Math.max(answer,cnt);
+        if(sum <= money)
+            answer = Math.max(answer,cnt);
     }
 
     return answer;
