@@ -1,0 +1,8 @@
+{
+    "persons":[
+        {"id":1, "firstName": "hong", "lastName": "jeongmin"},
+        {"id":2, "firstName": "kim", "lastName": "mingee"},
+        {"id":3, "firstName": "oh", "lastName": "imkinsoo"},
+        {"id":4, "firstName": "choi", "lastName": "lamda"}
+    ]
+}

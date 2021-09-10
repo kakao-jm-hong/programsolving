@@ -3,7 +3,7 @@ const INF = 987654321;
 function solution(strs, t) {
     const n = t.length;
     var digit = Array.from({length: n},() => INF);
-    
+
     const q = [];
     q.push([-1,0]);
     while(!(q.length === 0)) {
